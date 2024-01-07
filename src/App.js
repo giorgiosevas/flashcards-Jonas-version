@@ -37,14 +37,21 @@ const questions = [
 	},
 	{
 		id: 2002,
-		question: 'What do we call an input element that is completely synchronised with state?',
+		question: 'What do we call an input element that is completely synchronized with state?',
 		answer: 'Controlled element'
 	}
 ];
 
 function FlashCards() {
+	//? selectedId State Variable: This state variable holds the id of the currently selected flashcard. Initially, it's set to null, indicating that no flashcard is selected.
+	//? setSelectedId Function: This function is used to update the selectedId state variable.
 	const [selectedId, setSelectedId] = useState(null);
 
+	/**
+	 *? handleClick Function: This function is called when a flashcard is clicked. It takes an id as a parameter (the id of the clicked flashcard).
+	 *? If the clicked flashcard is different from the currently selected one, it sets selectedId to the id of the clicked flashcard.
+	 *? If the clicked flashcard is the same as the currently selected one (i.e., it's clicked again), it sets selectedId to null (deselecting it).
+	 */
 	function handleClick(id) {
 		setSelectedId(id !== selectedId ? id : null);
 	}
