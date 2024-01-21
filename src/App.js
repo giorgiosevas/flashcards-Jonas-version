@@ -48,25 +48,28 @@ function FlashCards() {
 	const [selectedId, setSelectedId] = useState(null);
 
 	/**
-	 *? handleClick Function: This function is called when a flashcard is clicked. It takes an id as a parameter (the id of the clicked flashcard).
+	 *? handleClick Function: This function is called when a flashcard is clicked. It takes an id(id of one of the questions) as a parameter (the id of the clicked flashcard).
 	 *? If the clicked flashcard is different from the currently selected one, it sets selectedId to the id of the clicked flashcard.
 	 *? If the clicked flashcard is the same as the currently selected one (i.e., it's clicked again), it sets selectedId to null (deselecting it).
 	 */
 	function handleClick(id) {
-		setSelectedId(id !== selectedId ? id : null);
+		setSelectedId(id !== selectedId ? id : null); //SOS
 	}
 
 	return (
 		<div className="flashcards">
+			//---SOS---//
 			{questions.map((question) => (
 				<div
 					key={question.id}
 					onClick={() => handleClick(question.id)}
+					//Wrong ---> onClick={handleClick(question.id)}
 					className={question.id === selectedId ? 'selected' : ''}
 				>
-					<p>{question.id === selectedId ? question.answer : question.question}</p>
+					<p>{question.id === selectedId ? question.answer : question.question}</p>//SOS
 				</div>
 			))}
+			//---end of SOS---//
 		</div>
 	);
 }
