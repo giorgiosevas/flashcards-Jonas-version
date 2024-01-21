@@ -57,8 +57,8 @@ function FlashCards() {
 	}
 
 	return (
+		//---SOS---//
 		<div className="flashcards">
-			//---SOS---//
 			{questions.map((question) => (
 				<div
 					key={question.id}
@@ -66,10 +66,10 @@ function FlashCards() {
 					//Wrong ---> onClick={handleClick(question.id)}
 					className={question.id === selectedId ? 'selected' : ''}
 				>
-					<p>{question.id === selectedId ? question.answer : question.question}</p>//SOS
+					<p>{question.id === selectedId ? question.answer : question.question}</p>
 				</div>
 			))}
-			//---end of SOS---//
 		</div>
+		//---end of SOS---//
 	);
 }
